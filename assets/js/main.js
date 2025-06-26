@@ -335,29 +335,72 @@ function updateActiveColorOption(theme) {
 }
 
 // Testimonials slider functionality
+let testimonialsState = {
+    container: null,
+    cards: null,
+    currentIndex: 0
+};
+
+function showTestimonial(index) {
+    if (!testimonialsState.container) return;
+    const translateX = -index * 100;
+    testimonialsState.container.style.transform = `translateX(${translateX}%)`;
+}
+
+function nextTestimonial() {
+    if (!testimonialsState.cards || testimonialsState.cards.length <= 1) return;
+    testimonialsState.currentIndex = (testimonialsState.currentIndex + 1) % testimonialsState.cards.length;
+    showTestimonial(testimonialsState.currentIndex);
+}
+
+function prevTestimonial() {
+    if (!testimonialsState.cards || testimonialsState.cards.length <= 1) return;
+    testimonialsState.currentIndex = (testimonialsState.currentIndex - 1 + testimonialsState.cards.length) % testimonialsState.cards.length;
+    showTestimonial(testimonialsState.currentIndex);
+}
+
 function initTestimonials() {
     const container = document.querySelector('.testimonials-container');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
     const cards = document.querySelectorAll('.testimonial-card');
     
     if (!container || !cards.length) return;
     
-    let currentIndex = 0;
+    // Initialize state
+    testimonialsState.container = container;
+    testimonialsState.cards = cards;
+    testimonialsState.currentIndex = 0;
     
-    function showTestimonial(index) {
-        const translateX = -index * 100;
-        container.style.transform = `translateX(${translateX}%)`;
-    }
-    
-    function nextTestimonial() {
-        currentIndex = (currentIndex + 1) % cards.length;
-        showTestimonial(currentIndex);
-    }
-    
-    function prevTestimonial() {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        showTestimonial(currentIndex);
+    // If only one testimonial, hide navigation buttons with smooth transition
+    if (cards.length <= 1) {
+        if (prevBtn) {
+            prevBtn.style.opacity = '0';
+            prevBtn.style.visibility = 'hidden';
+            prevBtn.style.pointerEvents = 'none';
+            prevBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+        }
+        if (nextBtn) {
+            nextBtn.style.opacity = '0';
+            nextBtn.style.visibility = 'hidden';
+            nextBtn.style.pointerEvents = 'none';
+            nextBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+        }
+        return; // No need to set up navigation for single item
+    } else {
+        // Show buttons if there are multiple testimonials
+        if (prevBtn) {
+            prevBtn.style.opacity = '1';
+            prevBtn.style.visibility = 'visible';
+            prevBtn.style.pointerEvents = 'auto';
+            prevBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+        }
+        if (nextBtn) {
+            nextBtn.style.opacity = '1';
+            nextBtn.style.visibility = 'visible';
+            nextBtn.style.pointerEvents = 'auto';
+            nextBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+        }
     }
     
     if (nextBtn) {
@@ -368,8 +411,10 @@ function initTestimonials() {
         prevBtn.addEventListener('click', prevTestimonial);
     }
     
-    // Auto-play testimonials
-    setInterval(nextTestimonial, 5000);
+    // Auto-play testimonials (only if more than one)
+    if (cards.length > 1) {
+        setInterval(nextTestimonial, 5000);
+    }
     
     // Touch/swipe support for mobile
     let startX = 0;
