@@ -1,9 +1,5 @@
 module.exports = {
-  content: [
-    "./_site/**/*.html",
-    "./_site/**/*.js",
-    "./assets/js/**/*.js",
-  ],
+  content: ["./_site/**/*.html", "./_site/**/*.js", "./assets/js/**/*.js"],
   css: ["./_site/assets/css/**/*.css"],
   output: "./_site/assets/css/",
   extractors: [
@@ -40,4 +36,4 @@ module.exports = {
   keyframes: false,
   // Don't remove unused variables
   variables: false,
-}; 
+};
