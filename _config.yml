@@ -1,6 +1,6 @@
 # Site settings
 title: CodeFolio Demo
-email: your-email@example.com
+email: feedback@gradinnovate.com
 description: >- # this means to ignore newlines until "baseurl:"
   A modern Jekyll theme for showcasing software products
 baseurl: "/CodeFolio" # the subpath of your site, e.g. /blog
@@ -14,7 +14,7 @@ show_color_theme_switcher: false # 是否顯示顏色主題選擇器按鈕 (開�
 # 請前往 https://formspree.io 註冊並創建表單，然後將完整的 endpoint URL 填入下方
 formspree:
   enabled: true # 是否啟用 Formspree 聯絡表單
-  endpoint: "https://formspree.io/f/YOUR_FORM_ID" # 您的 Formspree 表單完整 endpoint URL
+  endpoint: "https://formspree.io/f/meokpngk" # 您的 Formspree 表單完整 endpoint URL
 
 # Build settings
 markdown: kramdown
@@ -59,7 +59,5 @@ defaults:
 
 # Social media links
 social:
-  github: your-github
-  twitter: your-twitter
-  linkedin: your-linkedin
-  email: your-email@example.com
+  github: https://github.com/gradinnovate/CodeFolio
+  email:  feedback@gradinnovate.com

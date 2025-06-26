@@ -13,7 +13,7 @@ modules:
     description: "Streamline Your Development Workflow"
     cta_text: "Get Started"
     cta_link: "#project"
-    hero_image: "/assets/images/hero-avatar.png"
+    hero_image: "/assets/images/hero-avatar.jpg"
 
   # Project 模組
   project:
@@ -23,9 +23,9 @@ modules:
     description: "This software project represents months of careful planning, development, and testing. Built with modern technologies and user-centered design principles, it delivers exceptional performance and user experience."
     promo_video: "/assets/videos/codeflow-promo.mp4"
     main_image: "/assets/images/project/main-preview.jpg"
-    demo_url: "https://example.com/demo"
+    demo_url: "https://gradinnovate.github.io/CodeFolio"
     github_url: "https://github.com/gradinnovate/CodeFolio"
-    download_url: "https://github.com/gradinnovate/CodeFolio/releases"
+    download_url: "https://github.com/gradinnovate/CodeFolio"
     technologies:
       - "React"
       - "Node.js"
@@ -97,10 +97,10 @@ modules:
         company: "Tech Innovations Inc."
         avatar: "/assets/images/testimonials/sarah.jpg"
       - content: "Outstanding work! The attention to detail and user experience is exceptional."
-        author: "Michael Chen"
+        author: "Jane Chen"
         position: "Product Manager"
         company: "Digital Solutions Ltd."
-        avatar: "/assets/images/testimonials/michael.jpg"
+        avatar: "/assets/images/testimonials/jane.jpeg"
 
   # Contact 模組
   contact:
@@ -108,7 +108,7 @@ modules:
     title: "Get In Touch"
     subtitle: "Ready to start your project? Let's discuss how we can help you achieve your goals."
     contact_form_enabled: true
-    contact_email: "hello@example.com"
+    # contact_email: 將自動使用 _config.yml 中的 email 設定
     show_social: true
 
 # SEO 設定

@@ -14,28 +14,28 @@
     <div class="contact-form-container">
       <!-- Formspree Contact Form -->
       <form
-        class="contact-form"
+        class="form"
         id="contactForm"
         action="{{ site.formspree.endpoint }}"
         method="POST"
       >
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="name">{{ site.data.languages[page.lang].form.name | default: "Name" }}</label>
           <input type="text" id="name" name="name" required />
         </div>
 
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email">{{ site.data.languages[page.lang].form.email | default: "Email" }}</label>
           <input type="email" id="email" name="email" required />
         </div>
 
         <div class="form-group">
-          <label for="subject">Subject</label>
+          <label for="subject">{{ site.data.languages[page.lang].form.subject | default: "Subject" }}</label>
           <input type="text" id="subject" name="subject" required />
         </div>
 
         <div class="form-group">
-          <label for="message">Message</label>
+          <label for="message">{{ site.data.languages[page.lang].form.message | default: "Message" }}</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
@@ -45,11 +45,11 @@
         <button type="submit" class="btn-primary submit-btn">
           <span class="btn-text">
             <i class="fas fa-paper-plane"></i>
-            Send Message
+            {{ site.data.languages[page.lang].form.submit | default: "Send Message" }}
           </span>
           <span class="btn-loading" style="display: none">
             <i class="fas fa-spinner fa-spin"></i>
-            Sending...
+            {{ site.data.languages[page.lang].form.sending | default: "Sending..." }}
           </span>
         </button>
       </form>
@@ -118,50 +118,55 @@
     {% endif %}
 
     <!-- Contact Info -->
-    {% if include.data.contact_email or include.data.show_social %}
+    {% assign contact_email = include.data.contact_email | default: site.email %}
+    {% if contact_email or include.data.show_social %}
     <div class="contact-info">
-      {% if include.data.contact_email %}
+      {% if contact_email %}
       <div class="contact-item">
         <div class="contact-icon">
           <i class="fas fa-envelope"></i>
         </div>
         <div class="contact-details">
           <h4>Email</h4>
-          <p>
-            <a href="mailto:{{ include.data.contact_email }}"
-              >{{ include.data.contact_email }}</a
-            >
-          </p>
+          <a href="mailto:{{ contact_email }}">
+            {{ contact_email }}
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
-      {% endif %} {% if include.data.show_social %} {% if site.social.linkedin
-      %}
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fab fa-linkedin"></i>
+      {% endif %}
+      
+      {% if include.data.show_social %}
+        {% if site.social.linkedin %}
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+          <div class="contact-details">
+            <h4>LinkedIn</h4>
+            <a href="{{ site.social.linkedin }}" target="_blank">
+              Connect with me
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
-        <div class="contact-details">
-          <h4>LinkedIn</h4>
-          <p>
-            <a href="{{ site.social.linkedin }}" target="_blank"
-              >Connect with me</a
-            >
-          </p>
+        {% endif %}
+        
+        {% if site.social.github %}
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-details">
+            <h4>GitHub</h4>
+            <a href="{{ site.social.github }}" target="_blank">
+              View my work
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      {% endif %} {% if site.social.github %}
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fab fa-github"></i>
-        </div>
-        <div class="contact-details">
-          <h4>GitHub</h4>
-          <p>
-            <a href="{{ site.social.github }}" target="_blank">View my work</a>
-          </p>
-        </div>
-      </div>
-      {% endif %} {% endif %}
+        {% endif %}
+      {% endif %}
     </div>
     {% endif %}
   </div>

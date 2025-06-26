@@ -13,7 +13,7 @@ modules:
     description: "优化您的开发工作流程"
     cta_text: "开始使用"
     cta_link: "#project"
-    hero_image: "/assets/images/hero-avatar.png"
+    hero_image: "/assets/images/hero-avatar.jpg"
 
   # Project 模块
   project:
@@ -23,9 +23,9 @@ modules:
     description: "这个软件项目代表了数月的精心规划、开发和测试。采用现代技术和以用户为中心的设计原则构建，提供卓越的性能和用户体验。"
     promo_video: "/assets/videos/codeflow-promo.mp4"
     main_image: "/assets/images/project/main-preview.jpg"
-    demo_url: "https://example.com/demo"
+    demo_url: "https://gradinnovate.github.io/CodeFolio"
     github_url: "https://github.com/gradinnovate/CodeFolio"
-    download_url: "https://github.com/gradinnovate/CodeFolio/releases"
+    download_url: "https://github.com/gradinnovate/CodeFolio"
     technologies:
       - "React"
       - "Node.js"
@@ -92,15 +92,15 @@ modules:
     title: "客户评价"
     testimonials_list:
       - content: "这个软件完全改变了我们的开发流程。团队提供了我们真正需要的东西。"
-        author: "王小明"
+        author: "Sarah Johnson"
         position: "技术总监"
         company: "创新科技有限公司"
         avatar: "/assets/images/testimonials/sarah.jpg"
       - content: "出色的工作！对细节的关注和用户体验都非常出色。"
-        author: "陈美丽"
+        author: "Jane Chen"
         position: "产品经理"
         company: "数字解决方案有限公司"
-        avatar: "/assets/images/testimonials/michael.jpg"
+        avatar: "/assets/images/testimonials/jane.jpg"
 
   # Contact 模块
   contact:
@@ -108,7 +108,7 @@ modules:
     title: "联系我们"
     subtitle: "准备开始您的项目？让我们讨论如何帮助您实现目标。"
     contact_form_enabled: true
-    contact_email: "hello@example.com"
+    # contact_email: 將自動使用 _config.yml 中的 email 設定
     show_social: true
 
 # SEO 设置
