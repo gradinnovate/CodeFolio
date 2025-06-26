@@ -17,6 +17,7 @@
   --text-muted: #94A3B8;
   --border-color: #E2E8F0;
   --shadow: rgba(0, 0, 0, 0.1);
+  --bg-primary-rgb: 255, 255, 255;
   
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -43,6 +44,20 @@
   --text-muted: #64748B;
   --border-color: #334155;
   --shadow: rgba(0, 0, 0, 0.3);
+  --bg-primary-rgb: 15, 23, 42;
+}
+
+/* Ensure dark theme is applied to body */
+body[data-theme="dark"] {
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+}
+
+/* Ensure light theme is applied to body */
+body[data-theme="light"],
+body:not([data-theme]) {
+  background-color: #FFFFFF !important;
+  color: #1E293B !important;
 }
 
 /* Dark theme with color variations */
@@ -159,6 +174,7 @@ body {
   background-color: var(--bg-primary);
   transition: var(--transition);
   overflow-x: hidden;
+  padding-top: 80px; /* Account for fixed navbar */
 }
 
 /* Typography */
@@ -219,8 +235,70 @@ img {
   background: rgba(15, 23, 42, 0.95);
 }
 
+/* Dark theme navbar styles */
+[data-theme="dark"] .navbar {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(var(--bg-primary-rgb), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark theme navigation elements */
+[data-theme="dark"] .nav-link {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .nav-brand a {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .theme-toggle {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .language-select {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .language-select:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary-color);
+}
+
 .navbar {
   padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: rgba(var(--bg-primary-rgb, 255, 255, 255), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
@@ -229,23 +307,38 @@ img {
   justify-content: space-between;
 }
 
-.brand-logo {
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-brand {
   font-size: 1.5rem;
   font-weight: var(--font-weight-bold);
+}
+
+.nav-brand a {
   color: var(--primary-color);
+  text-decoration: none;
 }
 
-.navbar-menu {
+.nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-.navbar-nav {
+.nav-controls {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  list-style: none;
+  gap: 1rem;
+}
+
+/* Mobile menu button - hidden by default */
+.mobile-menu-btn {
+  display: none;
 }
 
 .nav-link {
@@ -277,6 +370,22 @@ img {
 /* Language Switcher */
 .language-switcher {
   position: relative;
+}
+
+.language-select {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+.language-select:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary-color);
 }
 
 .dropdown-toggle {
@@ -426,12 +535,12 @@ img {
   pointer-events: auto;
 }
 
-/* Alternative hover trigger for desktop */
-.color-theme-switcher:hover .color-theme-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+/* Disable hover trigger - use click only, but allow .show class to override */
+.color-theme-switcher:hover .color-theme-dropdown:not(.show) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-10px) scale(0.95) !important;
+  pointer-events: none !important;
 }
 
 .color-theme-option {
@@ -462,12 +571,12 @@ img {
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
-.color-theme-option.active .theme-color-preview {
+.color-theme-option.active .color-preview {
   border-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
-.theme-color-preview {
+.color-preview {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -477,22 +586,22 @@ img {
   flex-shrink: 0;
 }
 
-.theme-color-preview.default { 
+.color-preview.default-preview { 
   background: linear-gradient(135deg, #4F46E5, #FBBF24); 
 }
-.theme-color-preview.ocean { 
+.color-preview.ocean-preview { 
   background: linear-gradient(135deg, #0ea5e9, #0284c7); 
 }
-.theme-color-preview.emerald { 
+.color-preview.emerald-preview { 
   background: linear-gradient(135deg, #10b981, #059669); 
 }
-.theme-color-preview.sunset { 
+.color-preview.sunset-preview { 
   background: linear-gradient(135deg, #f59e0b, #d97706); 
 }
-.theme-color-preview.rose { 
+.color-preview.rose-preview { 
   background: linear-gradient(135deg, #f43f5e, #e11d48); 
 }
-.theme-color-preview.cyberpunk { 
+.color-preview.cyberpunk-preview { 
   background: linear-gradient(135deg, #a855f7, #7c3aed); 
 }
 
@@ -544,18 +653,12 @@ img {
     font-size: 0.8rem;
   }
   
-  .theme-color-preview {
+  .color-preview {
     width: 20px;
     height: 20px;
   }
   
-  /* Disable hover on mobile, use click only */
-  .color-theme-switcher:hover .color-theme-dropdown {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px) scale(0.95);
-    pointer-events: none;
-  }
+  /* Click-only behavior maintained globally */
 }
 
 /* Mobile Menu Toggle */
@@ -940,50 +1043,248 @@ section {
   box-shadow: 0 25px 50px var(--shadow);
 }
 
+/* Custom video controls as fallback */
+.custom-video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.custom-video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
+.custom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-video-wrapper:hover .custom-controls {
+  opacity: 1;
+}
+
+.custom-play-btn {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.custom-play-btn:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.custom-progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.custom-progress-bar {
+  height: 100%;
+  background: var(--primary-color);
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+.custom-time {
+  color: white;
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+
+/* Volume controls hidden for silent videos */
+.custom-volume {
+  display: none;
+}
+
+.custom-volume-btn {
+  display: none;
+}
+
+.custom-fullscreen-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Simple video wrapper with big play button */
+.simple-video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.big-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(79, 70, 229, 0.9);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+}
+
+.big-play-button:hover {
+  background: rgba(79, 70, 229, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(79, 70, 229, 0.6);
+}
+
+.big-play-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .video-player {
   width: 100%;
   height: auto;
   display: block;
-  background: var(--bg-primary);
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
-}
-
-.video-container:hover .video-overlay {
-  opacity: 1;
-}
-
-.play-button {
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #000;
   border: none;
-  border-radius: 50%;
-  color: var(--primary-color);
-  font-size: 2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  outline: none;
+  border-radius: var(--border-radius);
+}
+
+/* Reset any interfering styles */
+.video-player,
+.video-player * {
+  pointer-events: auto !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+/* Force controls to be visible and clickable - Chrome specific */
+.video-player::-webkit-media-controls {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  bottom: 0 !important;
+  position: absolute !important;
+  width: 100% !important;
+}
+
+.video-player::-webkit-media-controls-panel {
+  display: flex !important;
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+}
+
+/* Ensure essential control buttons are clickable and visible */
+.video-player::-webkit-media-controls-play-button,
+.video-player::-webkit-media-controls-fullscreen-button {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  color: white !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Hide volume controls for silent videos */
+.video-player::-webkit-media-controls-mute-button,
+.video-player::-webkit-media-controls-volume-slider {
+  display: none !important;
+}
+
+.video-player::-webkit-media-controls-timeline {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Fix Chrome disabled state */
+.video-player::-webkit-media-controls-play-button:disabled {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  filter: none !important;
+  background: transparent !important;
+}
+
+/* Make sure video container doesn't interfere */
+.video-wrapper,
+.simple-video-wrapper {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.video-wrapper video,
+.simple-video-wrapper video {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Error state styling */
+.video-error {
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.play-button:hover {
-  background: white;
-  transform: scale(1.1);
+/* Remove video overlay and custom play button - use native controls */
+
+/* Debug: Ensure no elements are blocking video controls */
+.video-container::before,
+.video-container::after {
+  pointer-events: none;
+}
+
+/* Make sure video section doesn't interfere */
+.video-section {
+  pointer-events: auto;
 }
 
 .video-section {
@@ -1414,7 +1715,7 @@ section {
 
 @media (max-width: 768px) {
   /* Mobile Navigation */
-  .navbar-menu {
+  .nav-links {
     position: fixed;
     top: 100%;
     left: 0;
@@ -1428,22 +1729,37 @@ section {
     transition: var(--transition);
     flex-direction: column;
     align-items: stretch;
+    z-index: 100;
   }
   
-  .navbar-menu.active {
+  .nav-links.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
   
-  .navbar-nav {
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
+  .nav-links .nav-link {
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
   }
   
-  .navbar-toggle {
+  .mobile-menu-btn {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu-btn span {
+    width: 100%;
+    height: 3px;
+    background: var(--text-primary);
+    transition: var(--transition);
   }
   
   /* Color Theme Switcher Mobile */
@@ -1594,4 +1910,55 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
+}
+
+/* Chrome-specific pulse animation for video play button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 107, 107, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+/* Enhanced video wrapper for Chrome compatibility */
+.video-wrapper video {
+    cursor: pointer !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.video-wrapper video:hover {
+    opacity: 0.9;
+}
+
+/* Chrome notification specific styles */
+.chrome-notification-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.chrome-notification-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: background-color 0.2s ease;
+}
+
+.chrome-notification-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 } 

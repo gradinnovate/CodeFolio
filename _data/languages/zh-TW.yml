@@ -1,3 +1,4 @@
+# 界面元素翻譯 - 繁體中文
 nav:
   home: "首頁"
   about: "關於"
@@ -5,33 +6,7 @@ nav:
   features: "特色"
   contact: "聯絡"
 
-hero:
-  subtitle: "程式碼協作平台"
-  title: "CodeFlow Pro"
-  description: "簡化您的開發工作流程"
-  cta: "立即試用"
-
-project:
-  title: "專案概覽"
-  subtitle: "設計來解決實際問題的綜合解決方案"
-  description: "這個軟體專案代表了數月的精心規劃、開發和測試。採用現代技術和以使用者為中心的設計原則，提供卓越的效能和使用者體驗。"
-  demo: "即時演示"
-  github: "查看原始碼"
-  download: "下載"
-  tech_title: "使用技術"
-  video_not_supported: "您的瀏覽器不支援影片播放。"
-  screenshots:
-    dashboard: "儀表板概覽"
-    code_editor: "代碼編輯器"
-    analytics: "數據分析"
-    settings: "設定介面"
-
-video:
-  demo_title: "實際操作展示"
-  demo_description: "觀看我們軟體主要功能和能力的全面演示。瞭解它如何改變您的工作流程並提升生產力。"
-
 theme:
-  colors: "配色"
   choose: "選擇主題"
   default: "預設"
   ocean: "海洋藍"
@@ -40,36 +15,28 @@ theme:
   rose: "玫瑰粉"
   cyberpunk: "賽博紫"
 
-about:
-  title: "關於我"
-  description: "我是一位充滿熱忱的開發者，創造創新的軟體解決方案來幫助企業成長和成功。憑藉多年現代網路技術經驗，我專注於建構解決實際問題的使用者友善應用程式。"
+# 通用按鈕和標籤
+buttons:
+  demo: "即時演示"
+  github: "查看原始碼"
+  download: "下載"
 
+# 表單元素
+form:
+  name: "姓名"
+  email: "電子郵件"
+  subject: "主題"
+  message: "訊息"
+  submit: "發送訊息"
+  sending: "發送中..."
+
+# 統計標籤
 stats:
   projects: "專案"
   clients: "客戶"
   experience: "年經驗"
 
-features:
-  title: "為什麼選擇我們的解決方案"
-  subtitle: "我們透過尖端技術提供卓越成果"
-
-testimonials:
-  title: "客戶評價"
-
-contact:
-  title: "讓我們一起合作"
-  description: "準備好將您的想法變為現實了嗎？讓我們討論您的專案，一起創造令人驚艷的作品。"
-  email_label: "電子郵件"
-  linkedin_label: "LinkedIn"
-  github_label: "GitHub"
-  form:
-    name: "姓名"
-    email: "電子郵件"
-    subject: "主題"
-    message: "訊息"
-    submit: "發送訊息"
-    sending: "發送中..."
-
+# 頁腳
 footer:
   quick_links: "快速連結"
   connect: "聯繫我們"

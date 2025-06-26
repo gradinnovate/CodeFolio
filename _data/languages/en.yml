@@ -1,3 +1,4 @@
+# Interface elements translation - English
 nav:
   home: "Home"
   about: "About"
@@ -5,28 +6,7 @@ nav:
   features: "Features"
   contact: "Contact"
 
-hero:
-  subtitle: "Code Collaboration Platform"
-  title: "CodeFlow Pro"
-  description: "Streamline Your Development Workflow"
-  cta: "Try It Now"
-
-project:
-  title: "Project Overview"
-  subtitle: "A comprehensive solution designed to solve real-world problems"
-  description: "This software project represents months of careful planning, development, and testing. Built with modern technologies and user-centered design principles, it delivers exceptional performance and user experience."
-  demo: "Live Demo"
-  github: "View Source"
-  download: "Download"
-  tech_title: "Technologies Used"
-  video_not_supported: "Your browser does not support the video tag."
-
-video:
-  demo_title: "See It In Action"
-  demo_description: "Watch a comprehensive walkthrough of our software's key features and capabilities. See how it can transform your workflow and boost productivity."
-
 theme:
-  colors: "Colors"
   choose: "Choose Theme"
   default: "Default"
   ocean: "Ocean Blue"
@@ -35,36 +15,28 @@ theme:
   rose: "Rose Pink"
   cyberpunk: "Cyberpunk Purple"
 
-about:
-  title: "About Me"
-  description: "I'm a passionate developer who creates innovative software solutions that help businesses grow and succeed. With years of experience in modern web technologies, I focus on building user-friendly applications that solve real-world problems."
+# Common buttons and labels
+buttons:
+  demo: "Live Demo"
+  github: "View Source"
+  download: "Download"
 
+# Form elements
+form:
+  name: "Name"
+  email: "Email"
+  subject: "Subject"
+  message: "Message"
+  submit: "Send Message"
+  sending: "Sending..."
+
+# Statistics labels
 stats:
   projects: "Projects"
   clients: "Clients"
   experience: "Years"
 
-features:
-  title: "Why Choose Our Solutions"
-  subtitle: "We deliver exceptional results through cutting-edge technology"
-
-testimonials:
-  title: "What Clients Say"
-
-contact:
-  title: "Let's Work Together"
-  description: "Ready to bring your ideas to life? Let's discuss your project and create something amazing together."
-  email_label: "Email"
-  linkedin_label: "LinkedIn"
-  github_label: "GitHub"
-  form:
-    name: "Name"
-    email: "Email"
-    subject: "Subject"
-    message: "Message"
-    submit: "Send Message"
-    sending: "Sending..."
-
+# Footer
 footer:
   quick_links: "Quick Links"
   connect: "Connect"

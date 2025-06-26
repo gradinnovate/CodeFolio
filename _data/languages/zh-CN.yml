@@ -1,3 +1,4 @@
+# 界面元素翻译 - 简体中文
 nav:
   home: "首页"
   about: "关于"
@@ -5,33 +6,7 @@ nav:
   features: "特色"
   contact: "联系"
 
-hero:
-  subtitle: "代码协作平台"
-  title: "CodeFlow Pro"
-  description: "简化您的开发工作流程"
-  cta: "立即试用"
-
-project:
-  title: "项目概览"
-  subtitle: "设计来解决实际问题的综合解决方案"
-  description: "这个软件项目代表了数月的精心规划、开发和测试。采用现代技术和以用户为中心的设计原则，提供卓越的性能和用户体验。"
-  demo: "实时演示"
-  github: "查看源码"
-  download: "下载"
-  tech_title: "使用技术"
-  video_not_supported: "您的浏览器不支持视频播放。"
-  screenshots:
-    dashboard: "仪表板概览"
-    code_editor: "代码编辑器"
-    analytics: "数据分析"
-    settings: "设置界面"
-
-video:
-  demo_title: "实际操作展示"
-  demo_description: "观看我们软件主要功能和能力的全面演示。了解它如何改变您的工作流程并提升生产力。"
-
 theme:
-  colors: "配色"
   choose: "选择主题"
   default: "默认"
   ocean: "海洋蓝"
@@ -40,36 +15,28 @@ theme:
   rose: "玫瑰粉"
   cyberpunk: "赛博紫"
 
-about:
-  title: "关于我"
-  description: "我是一位充满热忱的开发者，创造创新的软件解决方案来帮助企业成长和成功。凭借多年现代网络技术经验，我专注于构建解决实际问题的用户友好应用程序。"
+# 通用按钮和标签
+buttons:
+  demo: "实时演示"
+  github: "查看源码"
+  download: "下载"
 
+# 表单元素
+form:
+  name: "姓名"
+  email: "电子邮件"
+  subject: "主题"
+  message: "消息"
+  submit: "发送消息"
+  sending: "发送中..."
+
+# 统计标签
 stats:
   projects: "项目"
   clients: "客户"
   experience: "年经验"
 
-features:
-  title: "为什么选择我们的解决方案"
-  subtitle: "我们通过尖端技术提供卓越成果"
-
-testimonials:
-  title: "客户评价"
-
-contact:
-  title: "让我们一起合作"
-  description: "准备好将您的想法变为现实了吗？让我们讨论您的项目，一起创造令人惊艳的作品。"
-  email_label: "电子邮件"
-  linkedin_label: "LinkedIn"
-  github_label: "GitHub"
-  form:
-    name: "姓名"
-    email: "电子邮件"
-    subject: "主题"
-    message: "消息"
-    submit: "发送消息"
-    sending: "发送中..."
-
+# 页脚
 footer:
   quick_links: "快速链接"
   connect: "联系我们"
