@@ -1,0 +1,23 @@
+- name: "Frontend Development"
+  icon: "fas fa-code"
+  description: "Modern JavaScript, React, Vue.js, and responsive design"
+
+- name: "Backend Development"
+  icon: "fas fa-server"
+  description: "Node.js, Python, APIs, and database design"
+
+- name: "Mobile Development"
+  icon: "fas fa-mobile-alt"
+  description: "React Native, Flutter, and native iOS/Android"
+
+- name: "DevOps & Cloud"
+  icon: "fas fa-cloud"
+  description: "AWS, Docker, CI/CD, and infrastructure automation"
+
+- name: "UI/UX Design"
+  icon: "fas fa-paint-brush"
+  description: "User-centered design, prototyping, and design systems"
+
+- name: "Data Analysis"
+  icon: "fas fa-chart-bar"
+  description: "Analytics, visualization, and machine learning basics" 

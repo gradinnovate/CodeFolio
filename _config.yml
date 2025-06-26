@@ -1,0 +1,81 @@
+# Site settings
+title: CodeFolio
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A modern Jekyll theme for showcasing software products
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+  - jemoji
+
+# Multi-language support
+languages: ["en", "zh-TW", "zh-CN"]
+default_lang: "en"
+exclude_from_localization: ["css", "js", "images", "assets"]
+
+# Collections
+collections:
+  features:
+    output: false
+  testimonials:
+    output: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+
+# Social media links
+social:
+  github: your-github
+  twitter: your-twitter
+  linkedin: your-linkedin
+  email: your-email@example.com
+
+# Project Information
+project:
+  title: "CodeFlow Pro"
+  description: "A powerful code collaboration platform that streamlines development workflows"
+  main_image: "/assets/images/project/main-preview.jpg"
+  promo_video: "/assets/videos/codeflow-promo.mp4"
+  demo_video: "/assets/videos/codeflow-demo.mp4"
+  demo_url: "https://demo.codeflow-pro.com"
+  github_url: "https://github.com/username/codeflow-pro"
+  download_url: "https://releases.codeflow-pro.com/latest"
+  technologies:
+    - "React"
+    - "Node.js"
+    - "TypeScript"
+    - "PostgreSQL"
+    - "Docker"
+    - "AWS"
+  screenshots:
+    - title: "Dashboard Overview"
+      image: "/assets/images/screenshots/dashboard.jpg"
+    - title: "Code Editor"
+      image: "/assets/images/screenshots/code-editor.jpg"
+    - title: "Analytics"
+      image: "/assets/images/screenshots/analytics.jpg"
+    - title: "Settings"
+      image: "/assets/images/screenshots/setting.jpg"
+
+# Theme settings
+theme_settings:
+  header_text: "CodeFlow Pro"
+  subheader_text: "Streamline Your Development Workflow"
+  cta_text: "Try It Now"
+  hero_image: "/assets/images/hero-avatar.png"
+  background_color: "#4F46E5"
+  accent_color: "#FBBF24"
