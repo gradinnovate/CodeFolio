@@ -143,7 +143,6 @@
             <div class="language-switcher">
               <select id="languageSelect" class="language-select">
                 {% for lang_code in site.languages %}
-                <!-- prettier-ignore -->
                 <option value="{{ lang_code }}" {% if page.lang == lang_code %}selected{% endif %}>
                   {% case lang_code %} {% when 'en' %}English {% when 'zh-TW'
                   %}繁體中文 {% when 'zh-CN' %}简体中文 {% endcase %}
