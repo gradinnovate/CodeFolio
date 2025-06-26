@@ -23,9 +23,9 @@ modules:
     description: "This software project represents months of careful planning, development, and testing. Built with modern technologies and user-centered design principles, it delivers exceptional performance and user experience."
     promo_video: "/assets/videos/codeflow-promo.mp4"
     main_image: "/assets/images/project/main-preview.jpg"
-    demo_url: "https://demo.codeflow-pro.com"
-    github_url: "https://github.com/username/codeflow-pro"
-    download_url: "https://releases.codeflow-pro.com/latest"
+    demo_url: "https://example.com/demo"
+    github_url: "https://github.com/gradinnovate/CodeFolio"
+    download_url: "https://github.com/gradinnovate/CodeFolio/releases"
     technologies:
       - "React"
       - "Node.js"
@@ -84,7 +84,7 @@ modules:
     title: "See It In Action"
     description: "Watch a comprehensive walkthrough of our software's key features and capabilities. See how it can transform your workflow and boost productivity."
     demo_video: "/assets/videos/codeflow-demo.mp4"
-    demo_url: "https://demo.codeflow-pro.com"
+    demo_url: "https://example.com/demo"
 
   # Testimonials 模組
   testimonials:

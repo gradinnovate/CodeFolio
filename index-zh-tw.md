@@ -23,9 +23,9 @@ modules:
     description: "這個軟體專案代表了數月的精心規劃、開發和測試。採用現代技術和以用戶為中心的設計原則構建，提供卓越的性能和用戶體驗。"
     promo_video: "/assets/videos/codeflow-promo.mp4"
     main_image: "/assets/images/project/main-preview.jpg"
-    demo_url: "https://demo.codeflow-pro.com"
-    github_url: "https://github.com/username/codeflow-pro"
-    download_url: "https://releases.codeflow-pro.com/latest"
+    demo_url: "https://example.com/demo"
+    github_url: "https://github.com/gradinnovate/CodeFolio"
+    download_url: "https://github.com/gradinnovate/CodeFolio/releases"
     technologies:
       - "React"
       - "Node.js"
@@ -84,7 +84,7 @@ modules:
     title: "實際操作演示"
     description: "觀看我們軟體主要功能和能力的全面演練。了解它如何轉換您的工作流程並提升生產力。"
     demo_video: "/assets/videos/codeflow-demo.mp4"
-    demo_url: "https://demo.codeflow-pro.com"
+    demo_url: "https://example.com/demo"
 
   # Testimonials 模組
   testimonials:
