@@ -2,6 +2,8 @@
 
 A beautiful, modern Jekyll theme designed specifically for showcasing software products and developer portfolios. Features a clean design, dark mode support, multi-language capabilities, and responsive layout.
 
+[![CodeFolio Demo](readme-demo.png)](https://gradinnovate.github.io/CodeFolio/)
+
 ## ✨ Features
 
 - **Modular Design**: Flexible module system - enable/disable sections as needed
@@ -52,18 +54,12 @@ url: "https://yourusername.github.io" # Your GitHub Pages URL
 
 ### Installation
 
-1. Clone this repository:
+1. Use this template to create your repository:
+   - Click the "Use this template" button on GitHub
+   - Create a new repository from this template
+   - Clone your new repository:
 
-```bash
-git clone https://github.com/your-username/codefolio.git
-cd codefolio
-```
-
-2. Open in VS Code:
-
-```bash
-code .
-```
+2. Open in VS Code
 
 3. When prompted, click "Reopen in Container" or use the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and select "Dev Containers: Reopen in Container"
 
@@ -777,20 +773,6 @@ In the Formspree dashboard you can:
 3. Check browser console for errors
 4. Confirm Formspree form is verified
 
-#### Not Receiving Emails?
-
-1. Check spam folder
-2. Confirm email address in Formspree account is correct
-3. Check submission records in Formspree dashboard
-
-### Alternative Options
-
-If you need more features, consider:
-
-1. **EmailJS** - Pure frontend solution with more customization options
-2. **Netlify Forms** - If migrating to Netlify hosting
-3. **Custom API** - If you need complete control
-
 ## 📱 Responsive Design
 
 The theme is built mobile-first and includes:
@@ -883,33 +865,6 @@ This repository includes a pre-configured GitHub Actions workflow for automatic 
 - The workflow triggers on pushes to `main` branch and pull requests
 - First deployment may take a few minutes to appear
 - Check the **Actions** tab if deployment fails
-
-#### Custom Branch Configuration
-
-If you keep your site on a different branch (not `main`), edit `.github/workflows/deploy.yml`:
-
-```yaml
-on:
-  push:
-    branches:
-      - your-branch-name # Change this
-  pull_request:
-    branches:
-      - your-branch-name # Change this
-```
-
-### Netlify
-
-1. Connect your GitHub repository to Netlify
-2. Set build command: `JEKYLL_ENV=production jekyll build`
-3. Set publish directory: `_site`
-4. Deploy
-
-Note: For Netlify deployment, the build process will automatically handle dependencies.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
 
