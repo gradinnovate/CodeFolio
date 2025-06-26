@@ -29,6 +29,7 @@ permalink: pretty
 # Include additional file types for Jekyll to serve
 include:
   - _pages
+  - googledae90902bbd1e808.html
 
 # Keep video files and other assets
 keep_files:
