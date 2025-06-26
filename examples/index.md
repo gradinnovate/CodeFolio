@@ -13,7 +13,7 @@ modules:
     description: "Creating beautiful and functional web applications"
     cta_text: "View My Work"
     cta_link: "#about"
-  
+
   about:
     enabled: true
     title: "About Me"
@@ -26,4 +26,4 @@ modules:
 description: "Jane Developer - Fullstack developer creating beautiful web applications"
 ---
 
-<!-- 簡化版只需要 Hero 和 About 模組 --> 
+<!-- 簡化版只需要 Hero 和 About 模組 -->

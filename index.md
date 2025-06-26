@@ -14,7 +14,7 @@ modules:
     cta_text: "Get Started"
     cta_link: "#project"
     hero_image: "/assets/images/hero-avatar.png"
-  
+
   # Project 模組
   project:
     enabled: true
@@ -40,7 +40,7 @@ modules:
         image: "/assets/images/screenshots/code-editor.jpg"
       - title: "Analytics"
         image: "/assets/images/screenshots/analytics.jpg"
-  
+
   # About 模組
   about:
     enabled: true
@@ -61,7 +61,7 @@ modules:
       - name: "Database Design"
         icon: "fas fa-database"
         description: "Designing efficient and optimized database structures"
-  
+
   # Features 模組
   features:
     enabled: true
@@ -77,7 +77,7 @@ modules:
       - title: "User-Friendly Design"
         icon: "fas fa-users"
         description: "Intuitive interfaces that users love to interact with"
-  
+
   # Video Demo 模組
   video_demo:
     enabled: true
@@ -85,7 +85,7 @@ modules:
     description: "Watch a comprehensive walkthrough of our software's key features and capabilities. See how it can transform your workflow and boost productivity."
     demo_video: "/assets/videos/codeflow-demo.mp4"
     demo_url: "https://demo.codeflow-pro.com"
-  
+
   # Testimonials 模組
   testimonials:
     enabled: true
@@ -101,7 +101,7 @@ modules:
         position: "Product Manager"
         company: "Digital Solutions Ltd."
         avatar: "/assets/images/testimonials/michael.jpg"
-  
+
   # Contact 模組
   contact:
     enabled: true
@@ -116,4 +116,4 @@ description: "CodeFlow Pro - A powerful code collaboration platform that streaml
 keywords: "software development, collaboration, productivity, web development"
 ---
 
-<!-- 所有內容都由模組根據上面的設定動態生成 --> 
+<!-- 所有內容都由模組根據上面的設定動態生成 -->

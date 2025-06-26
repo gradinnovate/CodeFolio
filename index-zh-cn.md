@@ -14,7 +14,7 @@ modules:
     cta_text: "开始使用"
     cta_link: "#project"
     hero_image: "/assets/images/hero-avatar.png"
-  
+
   # Project 模块
   project:
     enabled: true
@@ -40,7 +40,7 @@ modules:
         image: "/assets/images/screenshots/code-editor.jpg"
       - title: "数据分析"
         image: "/assets/images/screenshots/analytics.jpg"
-  
+
   # About 模块
   about:
     enabled: true
@@ -61,7 +61,7 @@ modules:
       - name: "数据库设计"
         icon: "fas fa-database"
         description: "设计高效且优化的数据库结构"
-  
+
   # Features 模块
   features:
     enabled: true
@@ -77,7 +77,7 @@ modules:
       - title: "用户友好设计"
         icon: "fas fa-users"
         description: "用户喜爱交互的直观界面"
-  
+
   # Video Demo 模块
   video_demo:
     enabled: true
@@ -85,7 +85,7 @@ modules:
     description: "观看我们软件主要功能和能力的全面演练。了解它如何转换您的工作流程并提升生产力。"
     demo_video: "/assets/videos/codeflow-demo.mp4"
     demo_url: "https://demo.codeflow-pro.com"
-  
+
   # Testimonials 模块
   testimonials:
     enabled: true
@@ -101,7 +101,7 @@ modules:
         position: "产品经理"
         company: "数字解决方案有限公司"
         avatar: "/assets/images/testimonials/michael.jpg"
-  
+
   # Contact 模块
   contact:
     enabled: true
@@ -116,4 +116,4 @@ description: "CodeFlow Pro - 强大的代码协作平台，优化开发工作流
 keywords: "软件开发, 协作, 生产力, 网页开发"
 ---
 
-<!-- 所有内容都由模块根据上面的设置动态生成 --> 
+<!-- 所有内容都由模块根据上面的设置动态生成 -->

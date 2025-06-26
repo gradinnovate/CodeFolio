@@ -31,12 +31,14 @@ A beautiful, modern Jekyll theme designed specifically for showcasing software p
 ### Installation
 
 1. Clone this repository:
+
 ```bash
 git clone https://github.com/your-username/codefolio.git
 cd codefolio
 ```
 
 2. Open in VS Code:
+
 ```bash
 code .
 ```
@@ -112,8 +114,8 @@ default_lang: en
 languages: ["en", "zh-TW", "zh-CN"]
 
 # Color theme settings
-color_theme: "default"  # default, ocean, emerald, sunset, rose, cyberpunk
-show_color_theme_switcher: false  # Set to true for development
+color_theme: "default" # default, ocean, emerald, sunset, rose, cyberpunk
+show_color_theme_switcher: false # Set to true for development
 
 # Contact form settings (Formspree)
 formspree:
@@ -147,7 +149,7 @@ modules:
     cta_text: "Get Started"
     cta_link: "#project"
     hero_image: "/assets/images/hero-avatar.png"
-  
+
   # Project showcase module
   project:
     enabled: true
@@ -159,7 +161,7 @@ modules:
     demo_url: "https://your-demo.com"
     github_url: "https://github.com/username/repo"
     technologies: ["React", "Node.js", "TypeScript"]
-  
+
   # About section
   about:
     enabled: true
@@ -174,7 +176,7 @@ modules:
       - name: "Frontend Development"
         icon: "fas fa-code"
         description: "Building user interfaces"
-  
+
   # Features module
   features:
     enabled: true
@@ -183,14 +185,14 @@ modules:
       - title: "Feature Name"
         icon: "fas fa-rocket"
         description: "Feature description"
-  
+
   # Video demo module
   video_demo:
     enabled: true
     title: "Product Demo"
     description: "Watch the product in action"
     demo_video: "/assets/videos/demo.mp4"
-  
+
   # Testimonials module
   testimonials:
     enabled: true
@@ -201,7 +203,7 @@ modules:
         position: "Job Title"
         company: "Company Name"
         avatar: "/assets/images/testimonials/client.jpg"
-  
+
   # Contact form module
   contact:
     enabled: true
@@ -228,7 +230,7 @@ modules:
 ✅ **Configuration in Markdown** - All content, styling, and behavior configured in MD files  
 ✅ **Pure HTML Rendering** - Templates only handle display, no fallback logic  
 ✅ **Complete Control** - What you see is exactly what you define in MD  
-✅ **No Hidden Logic** - No complex default values or automatic inference  
+✅ **No Hidden Logic** - No complex default values or automatic inference
 
 ### Module Structure
 
@@ -252,12 +254,12 @@ The hero module is the main banner section of your page.
 ```yaml
 hero:
   enabled: true
-  title: "Your Name or Brand"        # Required
-  subtitle: "Your Title"             # Optional
-  description: "Brief description"   # Optional
-  cta_text: "Button Text"           # Optional, requires cta_link
-  cta_link: "#section"              # Optional, requires cta_text
-  hero_image: "/path/to/image"      # Optional
+  title: "Your Name or Brand" # Required
+  subtitle: "Your Title" # Optional
+  description: "Brief description" # Optional
+  cta_text: "Button Text" # Optional, requires cta_link
+  cta_link: "#section" # Optional, requires cta_text
+  hero_image: "/path/to/image" # Optional
 ```
 
 ### 2. Project Module
@@ -267,19 +269,19 @@ Showcase your main project or product with rich media support.
 ```yaml
 project:
   enabled: true
-  title: "Project Title"                    # Optional
-  subtitle: "Project Subtitle"             # Optional
-  description: "Project description"        # Optional
-  promo_video: "/path/to/video"            # Optional
-  main_image: "/path/to/image"             # Optional
-  demo_url: "https://demo.com"             # Optional
-  github_url: "https://github.com/user/repo"  # Optional
-  download_url: "https://releases.com"     # Optional
-  technologies:                            # Optional
+  title: "Project Title" # Optional
+  subtitle: "Project Subtitle" # Optional
+  description: "Project description" # Optional
+  promo_video: "/path/to/video" # Optional
+  main_image: "/path/to/image" # Optional
+  demo_url: "https://demo.com" # Optional
+  github_url: "https://github.com/user/repo" # Optional
+  download_url: "https://releases.com" # Optional
+  technologies: # Optional
     - "React"
     - "Node.js"
     - "TypeScript"
-  screenshots:                             # Optional
+  screenshots: # Optional
     - title: "Screenshot Title"
       image: "/path/to/screenshot"
 ```
@@ -291,17 +293,17 @@ Present information about yourself or your company.
 ```yaml
 about:
   enabled: true
-  title: "About Title"              # Optional
-  description: "Detailed description"  # Optional
-  about_image: "/path/to/image"     # Optional
-  stats:                            # Optional, all sub-items optional
+  title: "About Title" # Optional
+  description: "Detailed description" # Optional
+  about_image: "/path/to/image" # Optional
+  stats: # Optional, all sub-items optional
     projects: "50+"
     clients: "30+"
     experience: "5+"
-  skills:                           # Optional
-    - name: "Skill Name"            # Required for each skill
-      icon: "fas fa-code"           # Optional
-      description: "Skill description"  # Optional
+  skills: # Optional
+    - name: "Skill Name" # Required for each skill
+      icon: "fas fa-code" # Optional
+      description: "Skill description" # Optional
 ```
 
 ### 4. Features Module
@@ -311,13 +313,13 @@ Highlight key features or capabilities.
 ```yaml
 features:
   enabled: true
-  title: "Features Title"           # Optional
-  subtitle: "Features Subtitle"    # Optional
-  features_list:                   # Requires at least one feature
-    - title: "Feature Name"         # Required for each feature
-      icon: "fas fa-rocket"         # Optional
-      description: "Feature description"  # Optional
-      image: "/path/to/image"       # Optional
+  title: "Features Title" # Optional
+  subtitle: "Features Subtitle" # Optional
+  features_list: # Requires at least one feature
+    - title: "Feature Name" # Required for each feature
+      icon: "fas fa-rocket" # Optional
+      description: "Feature description" # Optional
+      image: "/path/to/image" # Optional
 ```
 
 ### 5. Video Demo Module
@@ -327,10 +329,10 @@ Dedicated section for product demonstrations.
 ```yaml
 video_demo:
   enabled: true
-  demo_video: "/path/to/video"      # Required - no video, no module
-  title: "Video Title"              # Optional
-  description: "Video description"  # Optional
-  demo_url: "https://demo.com"      # Optional
+  demo_video: "/path/to/video" # Required - no video, no module
+  title: "Video Title" # Optional
+  description: "Video description" # Optional
+  demo_url: "https://demo.com" # Optional
 ```
 
 ### 6. Testimonials Module
@@ -340,13 +342,13 @@ Display client testimonials and reviews.
 ```yaml
 testimonials:
   enabled: true
-  title: "Testimonials Title"       # Optional
-  testimonials_list:               # Requires at least one testimonial
-    - content: "Testimonial content"  # Optional
-      author: "Client Name"         # Optional
-      position: "Job Title"         # Optional
-      company: "Company Name"       # Optional
-      avatar: "/path/to/avatar"     # Optional
+  title: "Testimonials Title" # Optional
+  testimonials_list: # Requires at least one testimonial
+    - content: "Testimonial content" # Optional
+      author: "Client Name" # Optional
+      position: "Job Title" # Optional
+      company: "Company Name" # Optional
+      avatar: "/path/to/avatar" # Optional
 ```
 
 ### 7. Contact Module
@@ -356,11 +358,11 @@ Contact form and information section.
 ```yaml
 contact:
   enabled: true
-  title: "Contact Title"                    # Optional
-  subtitle: "Contact Subtitle"             # Optional
-  contact_form_enabled: true               # Optional, show contact form
-  contact_email: "contact@example.com"     # Optional
-  show_social: true                        # Optional, show social media links
+  title: "Contact Title" # Optional
+  subtitle: "Contact Subtitle" # Optional
+  contact_form_enabled: true # Optional, show contact form
+  contact_email: "contact@example.com" # Optional
+  show_social: true # Optional, show social media links
 ```
 
 ### Complete Examples
@@ -395,7 +397,7 @@ modules:
     description: "This is an amazing piece of software"
     cta_text: "Learn More"
     cta_link: "#project"
-  
+
   project:
     enabled: true
     title: "Product Overview"
@@ -403,7 +405,7 @@ modules:
     promo_video: "/assets/videos/intro.mp4"
     demo_url: "https://demo.example.com"
     technologies: ["React", "Node.js", "PostgreSQL"]
-  
+
   features:
     enabled: true
     title: "Key Features"
@@ -414,7 +416,7 @@ modules:
       - title: "Easy to Use"
         icon: "fas fa-user-friendly"
         description: "Intuitive user interface"
-  
+
   contact:
     enabled: true
     title: "Get Started"
@@ -450,7 +452,7 @@ The theme supports multiple languages through YAML data files and separate markd
 ### Language Files Structure
 
 - `_data/languages/en.yml` - English translations
-- `_data/languages/zh-TW.yml` - Traditional Chinese translations  
+- `_data/languages/zh-TW.yml` - Traditional Chinese translations
 - `_data/languages/zh-CN.yml` - Simplified Chinese translations
 
 ### Page Files
@@ -464,7 +466,7 @@ The theme supports multiple languages through YAML data files and separate markd
 1. **Create language data file**: Add a new YAML file in `_data/languages/` (e.g., `fr.yml` for French)
 2. **Update config**: Add the language code to the `languages` array in `_config.yml`
 3. **Create page file**: Create a new markdown file with the language suffix (e.g., `index-fr.md`)
-4. **Set language in front matter**: 
+4. **Set language in front matter**:
    ```yaml
    ---
    layout: modular
@@ -478,6 +480,7 @@ The theme supports multiple languages through YAML data files and separate markd
 ### Language Switching
 
 The theme includes an automatic language switcher in the navigation. Users can switch between available languages, and the theme will:
+
 - Load the appropriate language data
 - Navigate to the corresponding page
 - Remember the user's language preference
@@ -490,9 +493,9 @@ The theme uses CSS custom properties for easy color customization. Edit the `:ro
 
 ```css
 :root {
-  --primary-color: #4F46E5;
-  --secondary-color: #FBBF24;
-  --accent-color: #06B6D4;
+  --primary-color: #4f46e5;
+  --secondary-color: #fbbf24;
+  --accent-color: #06b6d4;
   /* ... more colors */
 }
 ```
@@ -503,7 +506,7 @@ The theme uses Inter font by default. You can change it by updating the `--font-
 
 ```css
 :root {
-  --font-primary: 'Your Font', sans-serif;
+  --font-primary: "Your Font", sans-serif;
 }
 ```
 
@@ -532,8 +535,8 @@ Set the theme and selector visibility in `_config.yml`:
 
 ```yaml
 # _config.yml
-color_theme: "ocean"  # Set website theme
-show_color_theme_switcher: true  # Whether to show theme selector button
+color_theme: "ocean" # Set website theme
+show_color_theme_switcher: true # Whether to show theme selector button
 
 # Other configurations...
 title: "CodeFolio"
@@ -547,19 +550,23 @@ If `color_theme` is not set in `_config.yml`, the system will automatically use 
 ### Theme Selector Control
 
 #### Show Selector (Development)
+
 ```yaml
 # _config.yml
 show_color_theme_switcher: true
 ```
+
 - Display color theme selector button
 - Can switch themes in real-time for testing
 - Suitable for development phase
 
 #### Hide Selector (Production)
+
 ```yaml
 # _config.yml
 show_color_theme_switcher: false
 ```
+
 - Hide color theme selector button
 - Automatically apply configured theme
 - Suitable for production deployment
@@ -567,24 +574,27 @@ show_color_theme_switcher: false
 ### Configuration Examples
 
 #### Development Settings (Show Selector)
+
 ```yaml
 # _config.yml
 title: CodeFolio
 color_theme: "ocean"
-show_color_theme_switcher: true  # Show selector for testing
+show_color_theme_switcher: true # Show selector for testing
 # ... other configurations
 ```
 
 #### Production Settings (Hide Selector)
+
 ```yaml
 # _config.yml
 title: CodeFolio
 color_theme: "emerald"
-show_color_theme_switcher: false  # Hide selector
+show_color_theme_switcher: false # Hide selector
 # ... other configurations
 ```
 
 #### Using Default Theme
+
 ```yaml
 # _config.yml
 title: CodeFolio
@@ -636,21 +646,22 @@ Formspree is the best choice for GitHub Pages users because:
 #### 3. Get Form ID
 
 After creating the form, you'll see a URL like this:
+
 ```
 https://formspree.io/f/xzbwpklr
 ```
 
 Where `xzbwpklr` is your form ID.
 
-#### 4. Configure _config.yml
+#### 4. Configure \_config.yml
 
 Add your form endpoint URL to `_config.yml`:
 
 ```yaml
 # Contact form settings (Formspree)
 formspree:
-  enabled: true  # Enable Formspree contact form
-  endpoint: "https://formspree.io/f/xzbwpklr"  # Replace with your actual endpoint URL
+  enabled: true # Enable Formspree contact form
+  endpoint: "https://formspree.io/f/xzbwpklr" # Replace with your actual endpoint URL
 ```
 
 #### 5. Test Form
@@ -689,14 +700,15 @@ Edit in `_includes/modules/contact.html`:
 ```html
 <!-- Add new field -->
 <div class="form-group">
-    <label for="phone">Phone (Optional)</label>
-    <input type="tel" id="phone" name="phone">
+  <label for="phone">Phone (Optional)</label>
+  <input type="tel" id="phone" name="phone" />
 </div>
 ```
 
 #### 2. Custom Confirmation Page
 
 Set in Formspree dashboard:
+
 - Custom success page URL
 - Custom email template
 - Auto-reply settings
@@ -705,11 +717,11 @@ Set in Formspree dashboard:
 
 ```html
 <!-- Hidden fields (not shown to users) -->
-<input type="hidden" name="_subject" value="New Portfolio Contact">
-<input type="hidden" name="_cc" value="backup@example.com">
+<input type="hidden" name="_subject" value="New Portfolio Contact" />
+<input type="hidden" name="_cc" value="backup@example.com" />
 
 <!-- Custom redirect -->
-<input type="hidden" name="_next" value="https://yourdomain.com/thanks">
+<input type="hidden" name="_next" value="https://yourdomain.com/thanks" />
 ```
 
 ### Deployment to GitHub Pages
@@ -858,10 +870,10 @@ If you keep your site on a different branch (not `main`), edit `.github/workflow
 on:
   push:
     branches:
-      - your-branch-name  # Change this
+      - your-branch-name # Change this
   pull_request:
     branches:
-      - your-branch-name  # Change this
+      - your-branch-name # Change this
 ```
 
 ### Netlify

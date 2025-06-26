@@ -79,4 +79,4 @@ footer:
   template: "modules/footer.html"
   settings:
     - social_links
-    - copyright_text 
+    - copyright_text

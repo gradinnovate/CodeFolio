@@ -7,14 +7,14 @@ baseurl: "/CodeFolio" # the subpath of your site, e.g. /blog
 url: "https://gradinnovate.github.io" # the base hostname & protocol for your site
 
 # Theme settings
-color_theme: "cyberpunk"  # 全域預設顏色主題: default, ocean, emerald, sunset, rose, cyberpunk
-show_color_theme_switcher: false  # 是否顯示顏色主題選擇器按鈕 (開發時設為 true，發布時設為 false)
+color_theme: "cyberpunk" # 全域預設顏色主題: default, ocean, emerald, sunset, rose, cyberpunk
+show_color_theme_switcher: false # 是否顯示顏色主題選擇器按鈕 (開發時設為 true，發布時設為 false)
 
 # Contact form settings (Formspree)
 # 請前往 https://formspree.io 註冊並創建表單，然後將完整的 endpoint URL 填入下方
 formspree:
-  enabled: true  # 是否啟用 Formspree 聯絡表單
-  endpoint: "https://formspree.io/f/YOUR_FORM_ID"  # 您的 Formspree 表單完整 endpoint URL
+  enabled: true # 是否啟用 Formspree 聯絡表單
+  endpoint: "https://formspree.io/f/YOUR_FORM_ID" # 您的 Formspree 表單完整 endpoint URL
 
 # Build settings
 markdown: kramdown

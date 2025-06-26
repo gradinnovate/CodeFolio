@@ -14,7 +14,7 @@ modules:
     cta_text: "開始使用"
     cta_link: "#project"
     hero_image: "/assets/images/hero-avatar.png"
-  
+
   # Project 模組
   project:
     enabled: true
@@ -40,7 +40,7 @@ modules:
         image: "/assets/images/screenshots/code-editor.jpg"
       - title: "數據分析"
         image: "/assets/images/screenshots/analytics.jpg"
-  
+
   # About 模組
   about:
     enabled: true
@@ -61,7 +61,7 @@ modules:
       - name: "資料庫設計"
         icon: "fas fa-database"
         description: "設計高效且優化的資料庫結構"
-  
+
   # Features 模組
   features:
     enabled: true
@@ -77,7 +77,7 @@ modules:
       - title: "用戶友好設計"
         icon: "fas fa-users"
         description: "用戶喜愛互動的直觀界面"
-  
+
   # Video Demo 模組
   video_demo:
     enabled: true
@@ -85,7 +85,7 @@ modules:
     description: "觀看我們軟體主要功能和能力的全面演練。了解它如何轉換您的工作流程並提升生產力。"
     demo_video: "/assets/videos/codeflow-demo.mp4"
     demo_url: "https://demo.codeflow-pro.com"
-  
+
   # Testimonials 模組
   testimonials:
     enabled: true
@@ -101,7 +101,7 @@ modules:
         position: "產品經理"
         company: "數位解決方案有限公司"
         avatar: "/assets/images/testimonials/michael.jpg"
-  
+
   # Contact 模組
   contact:
     enabled: true
@@ -116,4 +116,4 @@ description: "CodeFlow Pro - 強大的程式碼協作平台，優化開發工作
 keywords: "軟體開發, 協作, 生產力, 網頁開發"
 ---
 
-<!-- 所有內容都由模組根據上面的設定動態生成 --> 
+<!-- 所有內容都由模組根據上面的設定動態生成 -->
