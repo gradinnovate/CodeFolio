@@ -408,13 +408,13 @@ let testimonialsState = {
 
 function showTestimonial(index) {
   if (!testimonialsState.container) return;
-  
+
   const sliderWidth = testimonialsState.container.parentElement.offsetWidth;
   const translateX = -(index * sliderWidth);
-  
+
   testimonialsState.container.style.transform = `translateX(${translateX}px)`;
   testimonialsState.currentIndex = index;
-  
+
   // Update dots
   updateTestimonialDots(index);
 }
@@ -463,8 +463,8 @@ function initTestimonials() {
   // Set container and card widths
   const sliderWidth = slider.offsetWidth;
   container.style.width = `${cards.length * sliderWidth}px`;
-  
-  cards.forEach(card => {
+
+  cards.forEach((card) => {
     card.style.width = `${sliderWidth}px`;
     card.style.flex = `0 0 ${sliderWidth}px`;
   });
@@ -490,15 +490,15 @@ function initTestimonials() {
   });
 
   // Handle window resize
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     const newSliderWidth = slider.offsetWidth;
     container.style.width = `${cards.length * newSliderWidth}px`;
-    
-    cards.forEach(card => {
+
+    cards.forEach((card) => {
       card.style.width = `${newSliderWidth}px`;
       card.style.flex = `0 0 ${newSliderWidth}px`;
     });
-    
+
     showTestimonial(testimonialsState.currentIndex);
   });
 }

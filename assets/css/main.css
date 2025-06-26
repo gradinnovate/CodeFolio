@@ -1432,7 +1432,11 @@ section {
 .feature-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   color: white;
   border-radius: var(--border-radius);
   display: flex;
@@ -1694,25 +1698,25 @@ section {
   .contact-form-container {
     padding: 0 1rem;
   }
-  
+
   .form {
     padding: 2rem;
   }
-  
+
   .form-group label {
     font-size: 1.125rem;
   }
-  
+
   .form-group input,
   .form-group textarea {
     padding: 1.25rem;
     font-size: 1.125rem;
   }
-  
+
   .form-group input {
     height: 4rem;
   }
-  
+
   .form-group textarea {
     min-height: 200px;
   }
@@ -2143,7 +2147,11 @@ section {
 .contact-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   color: white;
   border-radius: var(--border-radius);
   display: flex;
