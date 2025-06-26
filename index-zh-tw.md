@@ -1,6 +1,6 @@
 ---
 layout: modular
-title: 首頁
+title: CodeFolio Demo
 lang: zh-TW
 
 # 模組配置 - 繁體中文版本

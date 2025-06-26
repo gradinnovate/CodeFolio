@@ -1,6 +1,6 @@
 ---
 layout: modular
-title: Home
+title: CodeFolio Demo
 lang: en
 
 # 模組配置 - 所有設定都在 Markdown 中定義
@@ -10,7 +10,7 @@ modules:
     enabled: true
     title: "CodeFlow Pro"
     subtitle: "Artist • Designer • Thinker"
-    description: "This demo page uses AI-generated contents"
+    description: "This demo page uses AI-generated contents."
     cta_text: "Get Started"
     cta_link: "#project"
     hero_image: "/assets/images/hero-avatar.jpg"

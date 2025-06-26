@@ -1,6 +1,6 @@
 ---
 layout: modular
-title: 首页
+title: CodeFolio Demo
 lang: zh-CN
 
 # 模块配置 - 简体中文版本
