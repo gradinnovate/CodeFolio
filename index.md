@@ -10,7 +10,7 @@ modules:
     enabled: true
     title: "CodeFlow Pro"
     subtitle: "Artist • Designer • Thinker"
-    description: "Streamline Your Development Workflow"
+    description: "This demo page uses AI-generated contents"
     cta_text: "Get Started"
     cta_link: "#project"
     hero_image: "/assets/images/hero-avatar.jpg"

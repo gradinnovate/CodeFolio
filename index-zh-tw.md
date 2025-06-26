@@ -10,7 +10,7 @@ modules:
     enabled: true
     title: "CodeFlow Pro"
     subtitle: "藝術家 • 設計師 • 思想家"
-    description: "優化您的開發工作流程"
+    description: "使用 AI 產生的內容做展示"
     cta_text: "開始使用"
     cta_link: "#project"
     hero_image: "/assets/images/hero-avatar.jpg"
