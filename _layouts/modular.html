@@ -15,6 +15,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Color Theme Configuration -->
+    <meta name="site-color-theme" content="{{ site.color_theme | default: 'default' }}">
+    <meta name="show-color-theme-switcher" content="{{ site.show_color_theme_switcher | default: false }}">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
 </head>

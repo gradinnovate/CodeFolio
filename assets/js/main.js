@@ -186,6 +186,28 @@ function initColorThemeSwitch() {
     const colorThemeDropdown = document.getElementById('colorThemeDropdown');
     const colorThemeToggle = document.getElementById('colorThemeToggle');
     
+    // Check if color theme switcher should be shown (from _config.yml)
+    const showSwitcherMeta = document.querySelector('meta[name="show-color-theme-switcher"]');
+    const shouldShowSwitcher = showSwitcherMeta && showSwitcherMeta.content === 'true';
+    
+    console.log('🎨 [ColorTheme] Configuration check:', {
+        shouldShowSwitcher: shouldShowSwitcher,
+        configValue: showSwitcherMeta?.content
+    });
+    
+    // If switcher should not be shown, hide it and apply configured theme
+    if (!shouldShowSwitcher) {
+        console.log('🎨 [ColorTheme] Hiding color theme switcher (disabled in config)');
+        const colorThemeSwitcher = document.querySelector('.color-theme-switcher');
+        if (colorThemeSwitcher) {
+            colorThemeSwitcher.style.display = 'none';
+        }
+        
+        // Apply theme from site configuration
+        applyConfiguredTheme();
+        return;
+    }
+    
     console.log('🎨 [ColorTheme] Initializing color theme switcher...', {
         colorThemeToggle: !!colorThemeToggle,
         colorThemeDropdown: !!colorThemeDropdown,
@@ -323,6 +345,20 @@ function initColorThemeSwitch() {
 }
 
 // updateColorThemeIcon function removed - no dynamic icon to update
+
+function applyConfiguredTheme() {
+    // Get theme from site configuration (from _config.yml)
+    const themeMetaTag = document.querySelector('meta[name="site-color-theme"]');
+    const configuredTheme = themeMetaTag ? themeMetaTag.content : 'default';
+    
+    console.log('🎨 [ColorTheme] Applying configured theme:', configuredTheme);
+    
+    // Apply the configured theme
+    document.documentElement.setAttribute('data-color-theme', configuredTheme);
+    
+    // Update active option if the switcher exists (for development)
+    updateActiveColorOption(configuredTheme);
+}
 
 function updateActiveColorOption(theme) {
     const colorThemeOptions = document.querySelectorAll('.color-theme-option');
