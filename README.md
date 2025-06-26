@@ -28,6 +28,27 @@ A beautiful, modern Jekyll theme designed specifically for showcasing software p
 - [Docker](https://www.docker.com/get-started) installed on your machine
 - [Visual Studio Code](https://code.visualstudio.com/) with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
+## 🚀 Quick Setup for GitHub Pages
+
+**Before development**, configure your site settings in `_config.yml`:
+
+```yaml
+# Site settings
+title: "Your Portfolio Name"
+email: your-email@example.com
+description: "Your portfolio description"
+baseurl: "/your-repo-name" # For project pages (e.g., "/portfolio")
+url: "https://yourusername.github.io" # Your GitHub Pages URL
+
+# OR for user/organization pages:
+baseurl: "" # Leave empty for user pages
+url: "https://yourusername.github.io" # Your GitHub Pages URL
+```
+
+**Important**: 
+- For **project pages** (repository name like `portfolio`, `my-site`): set `baseurl: "/repository-name"`
+- For **user pages** (repository name like `username.github.io`): set `baseurl: ""`
+
 ### Installation
 
 1. Clone this repository:
