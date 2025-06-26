@@ -12,9 +12,12 @@
         </div>
         {% endif %}
         
-        {% if include.data.contact_form_enabled %}
+        {% if include.data.contact_form_enabled and site.formspree.enabled %}
         <div class="contact-form-container">
-            <form class="contact-form" id="contactForm">
+            <!-- Formspree Contact Form -->
+            <form class="contact-form" id="contactForm" 
+                  action="{{ site.formspree.endpoint }}" 
+                  method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -35,11 +38,40 @@
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 
-                <button type="submit" class="btn-primary">
-                    <i class="fas fa-paper-plane"></i>
-                    Send Message
+                <!-- Honeypot field for spam protection -->
+                <input type="text" name="_gotcha" style="display:none !important">
+                
+                <button type="submit" class="btn-primary submit-btn">
+                    <span class="btn-text">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </span>
+                    <span class="btn-loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Sending...
+                    </span>
                 </button>
             </form>
+        </div>
+        {% elsif include.data.contact_form_enabled %}
+        <div class="contact-form-container">
+            <div class="form-setup-notice" style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--border-radius-lg); border-left: 4px solid var(--primary-color);">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                    <i class="fas fa-exclamation-triangle"></i> Contact Form Setup Required
+                </h3>
+                <p style="margin-bottom: 1rem;">To enable the contact form, please complete the Formspree setup:</p>
+                <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                    <li>Visit <a href="https://formspree.io" target="_blank" style="color: var(--primary-color);">Formspree.io</a> and create a free account</li>
+                    <li>Create a new form and get your form ID</li>
+                    <li>Update <code style="background: var(--bg-primary); padding: 0.2rem 0.4rem; border-radius: 4px;">_config.yml</code> with:
+                        <pre style="background: var(--bg-primary); padding: 1rem; border-radius: 8px; margin: 0.5rem 0; overflow-x: auto;"><code>formspree:
+  enabled: true
+  endpoint: "https://formspree.io/f/YOUR_FORM_ID"</code></pre>
+                    </li>
+                    <li>Restart your Jekyll server</li>
+                </ol>
+                <p>📖 For detailed instructions, see <strong>CONTACT_FORM_SETUP.md</strong></p>
+            </div>
         </div>
         {% endif %}
         

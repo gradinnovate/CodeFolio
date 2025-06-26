@@ -479,38 +479,103 @@ function initTestimonials() {
     }
 }
 
-// Contact form functionality
+// Contact form functionality (Formspree integration)
 function initContactForm() {
-    const form = document.getElementById('contact-form');
+    const form = document.getElementById('contactForm');
     
-    if (!form) return;
+    if (!form) {
+        console.log('📧 [ContactForm] No contact form found or Formspree not configured');
+        return;
+    }
+    
+    // Validate Formspree configuration
+    const formAction = form.getAttribute('action');
+    if (!formAction || formAction.includes('YOUR_FORM_ID') || !formAction.startsWith('https://formspree.io/')) {
+        console.warn('⚠️ [ContactForm] Formspree endpoint not configured properly');
+        showFormConfigWarning();
+        return;
+    }
+    
+    console.log('📧 [ContactForm] Initializing Formspree contact form');
     
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const submitBtn = form.querySelector('.submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
         const formData = new FormData(form);
         
         // Show loading state
-        submitBtn.classList.add('loading');
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-flex';
         submitBtn.disabled = true;
         
         try {
-            // Simulate form submission (replace with actual endpoint)
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            // Submit to Formspree
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
             
-            // Show success message
-            showNotification('Message sent successfully!', 'success');
-            form.reset();
+            if (response.ok) {
+                // Show success message
+                showNotification('Message sent successfully! Thank you for contacting us.', 'success');
+                form.reset();
+            } else {
+                // Handle Formspree errors
+                const data = await response.json();
+                if (data.errors) {
+                    const errorMessage = data.errors.map(error => error.message).join(', ');
+                    showNotification(`Error: ${errorMessage}`, 'error');
+                } else {
+                    showNotification('Failed to send message. Please try again.', 'error');
+                }
+            }
             
         } catch (error) {
-            // Show error message
-            showNotification('Failed to send message. Please try again.', 'error');
+            console.error('Form submission error:', error);
+            showNotification('Network error. Please check your connection and try again.', 'error');
         } finally {
             // Reset button state
-            submitBtn.classList.remove('loading');
+            btnText.style.display = 'inline-flex';
+            btnLoading.style.display = 'none';
             submitBtn.disabled = false;
         }
+    });
+}
+
+// Form configuration warning
+function showFormConfigWarning() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    
+    // Add a warning banner to the form
+    const warningBanner = document.createElement('div');
+    warningBanner.className = 'form-config-warning';
+    warningBanner.style.cssText = `
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #dc2626;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+    `;
+    warningBanner.innerHTML = `
+        <strong>⚠️ Configuration Required:</strong> 
+        Please update your Formspree endpoint URL in <code>_config.yml</code> to enable this contact form.
+    `;
+    
+    form.parentNode.insertBefore(warningBanner, form);
+    
+    // Disable form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showNotification('Please configure Formspree endpoint URL first!', 'error');
     });
 }
 
