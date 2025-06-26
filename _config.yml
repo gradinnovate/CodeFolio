@@ -20,7 +20,7 @@ formspree:
 markdown: kramdown
 highlighter: rouge
 
-# Server settings  
+# Server settings
 webrick:
   headers:
     Cache-Control: no-cache

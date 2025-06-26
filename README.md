@@ -45,7 +45,8 @@ baseurl: "" # Leave empty for user pages
 url: "https://yourusername.github.io" # Your GitHub Pages URL
 ```
 
-**Important**: 
+**Important**:
+
 - For **project pages** (repository name like `portfolio`, `my-site`): set `baseurl: "/repository-name"`
 - For **user pages** (repository name like `username.github.io`): set `baseurl: ""`
 
