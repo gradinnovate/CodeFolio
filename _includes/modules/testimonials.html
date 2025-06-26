@@ -17,7 +17,7 @@
             <div class="testimonial-author">
               {% if testimonial.avatar %}
               <img
-                src="{{ testimonial.avatar }}"
+                src="{{ testimonial.avatar | relative_url }}"
                 alt="{{ testimonial.author }}"
                 class="author-avatar"
               />

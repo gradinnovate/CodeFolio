@@ -20,6 +20,12 @@ formspree:
 markdown: kramdown
 highlighter: rouge
 
+# Server settings  
+webrick:
+  headers:
+    Cache-Control: no-cache
+permalink: pretty
+
 # Include additional file types for Jekyll to serve
 include:
   - _pages

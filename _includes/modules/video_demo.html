@@ -29,7 +29,7 @@
             playsinline
             width="100%"
           >
-            <source src="{{ include.data.demo_video }}" type="video/mp4" />
+            <source src="{{ include.data.demo_video | relative_url }}" type="video/mp4" />
             <p>Your browser does not support the video tag.</p>
           </video>
           <button class="big-play-button" onclick="playVideo(this)">

@@ -32,7 +32,7 @@
       <div class="about-image">
         {% if include.data.about_image %}
         <img
-          src="{{ include.data.about_image }}"
+          src="{{ include.data.about_image | relative_url }}"
           alt="About"
           class="about-img"
         />

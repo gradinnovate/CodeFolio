@@ -13,7 +13,7 @@
         <h1 class="hero-title">
           {{ include.data.title }} {% if include.data.hero_image %}
           <img
-            src="{{ include.data.hero_image }}"
+            src="{{ include.data.hero_image | relative_url }}"
             alt="Avatar"
             class="hero-avatar"
           />

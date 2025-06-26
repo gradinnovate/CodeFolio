@@ -13,7 +13,7 @@
           playsinline
           width="100%"
         >
-          <source src="{{ include.data.promo_video }}" type="video/mp4" />
+          <source src="{{ include.data.promo_video | relative_url }}" type="video/mp4" />
           <p>Your browser does not support the video tag.</p>
         </video>
         <button class="big-play-button" onclick="playVideo(this)">
@@ -81,7 +81,7 @@
         {% if include.data.main_image %}
         <div class="showcase-main">
           <img
-            src="{{ include.data.main_image }}"
+            src="{{ include.data.main_image | relative_url }}"
             alt="{{ include.data.title }}"
             class="project-main-image"
           />
@@ -91,7 +91,7 @@
           {% for screenshot in include.data.screenshots %}
           <div class="gallery-item">
             <img
-              src="{{ screenshot.image }}"
+              src="{{ screenshot.image | relative_url }}"
               alt="{{ screenshot.title }}"
               class="gallery-image"
             />
